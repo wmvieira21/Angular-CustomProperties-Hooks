@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ServerComponent {
   //receive the information from [elementServer]="serveElement
-  @Input() elementServer = { name: String, content: String };
+  @Input() elementServer = { name: String, content: String, status: String};
 }
