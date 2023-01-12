@@ -3,8 +3,14 @@
     <hr>
     <div class="row">
         <div class="col-xs-12">
-            <app-server *ngFor="let serveElement of serverElements"
-            [elementServer]="serveElement"></app-server>
+            <button class="btn btn-primary" (click)="changeName()">Change name</button>
+            <button class="btn btn-danger"(click)="destroyFirst()">Destroy</button>
+            <app-server *ngFor="let serveElement of serverElements" [elementServer]="serveElement"
+                [name]="serveElement.name">
+                <!--ng-content-->
+                <div class="panel-body">{{serveElement.content}}</div>
+                <div class="panel-body">{{serveElement.status}}</div>
+            </app-server>
         </div>
     </div>
 </div>

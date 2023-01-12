@@ -8,10 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   serverElements = [];
 
-  onServerAdded(eventData: { serverName: string, serverContent: string}) {
+  onServerAdded(eventData: { serverName: string, serverContent: string, status: string}) {
     this.serverElements.push({
       name: eventData.serverName,
-      content: eventData.serverContent
+      content: eventData.serverContent,
+      status: eventData.status
     });
   }
+  changeName(){
+    this.serverElements[0].name = "changed";
+  }
+  destroyFirst(){
+    this.serverElements.splice(0,1);
+  }
+
 }
